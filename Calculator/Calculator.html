@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> --CALCULATOR-- </title>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <table border="2">
+            <tr>
+                <td colspan="3">
+                    <input type="text" id="result">
+                </td>
+                <td>
+                    <button onclick="backFUnction()"><=</button>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="performOperation('9')" value="9"> 9 </button></td>
+                <td><button onclick="performOperation('8')" value="8"> 8 </button></td>
+                <td><button onclick="performOperation('7')" value="7"> 7 </button></td>
+                <td><button onclick="clear()" value="C"> C </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="performOperation('6')" value="6"> 6 </button></td>
+                <td><button onclick="performOperation('5')" value="5"> 5 </button></td>
+                <td><button onclick="performOperation('4')" value="4"> 4 </button></td>
+                <td><button onclick="performOperation('+')" value="+"> + </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="performOperation('3')" value="3"> 3 </button></td>
+                <td><button onclick="performOperation('2')" value="2"> 2 </button></td>
+                <td><button onclick="performOperation('1')" value="1"> 1 </button></td>
+                <td><button onclick="performOperation('-')" value="-"> - </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="performOperation('0')" value= "0" > 0 </button></td>
+                <td><button onclick="performOperation('*')" value= "*" > * </button></td>
+                <td><button onclick="performOperation('/')" value= "/" > / </button></td>
+                <td><button onclick="total('=')" value= "=" > = </button></td>
+            </tr>
+        </table>
+        <script>
+            //Function to remove last charcter from string
+            function backFUnction() 
+            {
+                document.getElementById("result").value = document.getElementById("result").value.slice(0, -1);
+            }
+
+
+            //Function to perform mathematical operations
+            function performOperation(value)
+            {
+                document.getElementById("result").value+= value
+            }
+
+
+            //Function to calculate total
+            function total(value)
+            {
+                document.getElementById("result").value = eval(document.getElementById("result").value);
+            }
+
+
+            //Function to clear the input field
+            function clear()
+            {
+                document.getElementById("result").value = "";
+            }
+        </script>
+    </body>
+</html>
